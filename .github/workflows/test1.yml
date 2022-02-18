@@ -1,0 +1,25 @@
+on:
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.jsx'
+      - '**.ts'
+      - '**.tsx'
+
+name: Test 1
+
+jobs:
+  test1:
+    name: Test 1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Echo
+        run: |
+          echo $GITHUB_REF_NAME
+          echo $GITHUB_SHA
