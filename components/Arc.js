@@ -1,5 +1,7 @@
 import { h } from 'preact';
 
+console.log('ok');
+
 function Arc({ x, y, radius, startAngle, endAngle, ...otherProps }) {
   return (
     <path d={describeArc(x, y, radius, startAngle, endAngle)} {...otherProps} />
