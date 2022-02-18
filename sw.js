@@ -1,4 +1,4 @@
-console.log('ok');
+console.log('ok2');
 
 export function installServiceWorker() {
   // Check for browser support of service worker
