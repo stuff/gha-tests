@@ -23,3 +23,4 @@ jobs:
         run: |
           echo $GITHUB_REF_NAME
           echo $GITHUB_SHA
+          echo $GITHUB_HEAD_REF
