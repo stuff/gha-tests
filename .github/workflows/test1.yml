@@ -21,12 +21,12 @@ jobs:
 
       - name: Echo
         run: |
-          git diff --diff-filter=ACMRT --name-only $GITHUB_HEAD_REF `git merge-base $GITHUB_HEAD_REF master` | egrep ".jsx?$|.ts?$" | xargs
-          CHANGED_JS_FILES=$(git diff --diff-filter=ACMRT --name-only $GITHUB_HEAD_REF `git merge-base $GITHUB_HEAD_REF master` | egrep ".jsx?$|.ts?$" | xargs)
           echo $GITHUB_REF_NAME
           echo $GITHUB_SHA
           echo $GITHUB_HEAD_REF
           echo $CHANGED_JS_FILES
+          git diff --diff-filter=ACMRT --name-only $GITHUB_HEAD_REF `git merge-base $GITHUB_HEAD_REF master` | egrep ".jsx?$|.ts?$" | xargs
+          CHANGED_JS_FILES=$(git diff --diff-filter=ACMRT --name-only $GITHUB_HEAD_REF `git merge-base $GITHUB_HEAD_REF master` | egrep ".jsx?$|.ts?$" | xargs)
           echo "CHANGED_JS_FILES=$(echo $CHANGED_JS_FILES)" >> $GITHUB_ENV
 
       - name: Another Echo
